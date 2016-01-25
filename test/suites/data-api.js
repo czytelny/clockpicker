@@ -29,6 +29,36 @@ test('data-default="20:48" on input', function(){
     strictEqual(picker.minutes, 48, 'minutes reset');
 });
 
+test('data-default="08:48 PM" on input with twelvehour mode', function(){
+    var input = $('<input data-default="08:48 PM" />')
+                .appendTo('#qunit-fixture');
+
+    input.clockpicker();
+    var picker = input.data('clockpicker');
+    ok(picker, 'clockpicker is initialized');
+
+    input.triggerHandler('focus');
+    strictEqual(picker.hours, 8, 'hours is setted by default');
+    strictEqual(picker.minutes, 48, 'minutes is setted by default');
+    strictEqual(picker.amOrPm, 'PM', 'amOrPm is setted by default');
+
+    picker.hide();
+    input.blur()
+         .val('10:24 AM')
+         .triggerHandler('focus');
+    strictEqual(picker.hours, 10, 'hours changed');
+    strictEqual(picker.minutes, 24, 'minutes changed');
+    strictEqual(picker.amOrPm, 'AM', 'amOrPm changed');
+
+    picker.hide();
+    input.blur()
+         .val('')
+         .triggerHandler('focus');
+    strictEqual(picker.hours, 8, 'hours reset');
+    strictEqual(picker.minutes, 48, 'minutes reset');
+    strictEqual(picker.amOrPm, 'PM', 'amOrPm reset');
+});
+
 test('data-default="20:48" on input-group', function(){
     var group = $('<div class="input-group" data-default="20:48"><input /></div>')
                 .appendTo('#qunit-fixture');
