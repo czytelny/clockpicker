@@ -135,6 +135,10 @@ gulp
 
 ## Change log
 
+0.0.8
+
+* Correct parsing of hours in twelve hour mode
+
 0.0.7
 
 * Enables twelve hour mode with AM & PM buttons.
