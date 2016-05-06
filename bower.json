@@ -25,7 +25,7 @@
   "homepage": "http://linagora.org/",
   "repository": {
     "type": "git",
-    "url": "git://github.com:linagora/clockpicker.git"
+    "url": "git://github.com/linagora/clockpicker.git"
   },
   "dependencies": {
     "jquery" : ">=1.7"
