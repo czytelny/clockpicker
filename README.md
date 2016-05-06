@@ -135,6 +135,10 @@ gulp
 
 ## Change log
 
+0.0.9
+
+* Correct parsing of hours in twelve hour mode (v 0.0.8 not in master)
+
 0.0.8
 
 * Correct parsing of hours in twelve hour mode
